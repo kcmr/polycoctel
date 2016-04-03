@@ -1,0 +1,99 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Polymer Starter Kit">
+  <title>Polymer Starter Kit</title>
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
+
+  <!-- Because this project uses vulcanize this should be your only html import
+       in this file. All other imports should go in elements.html -->
+  <link rel="import" href="elements/elements.html">
+
+  <!-- For shared styles, shared-styles.html import in elements.html -->
+  <style is="custom-style" include="shared-styles">
+  .link {
+    @apply(--layout-horizontal);
+    @apply(--layout-center-center);
+    text-decoration: none;
+    color: #636363;
+  }
+  .iron-selected .link { color: #CC5696; }
+  paper-tabs {
+    --paper-tabs-selection-bar-color: #CC5696;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    position: relative;
+    z-index: 1;
+  }
+  .nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
+  .nav .left { float: left; }
+  .nav .right { float: right; }
+
+  body[loading] { opacity: 0; }
+  </style>
+</head>
+
+<body unresolved loading>
+  <!-- build:remove -->
+  <span id="browser-sync-binding"></span>
+  <!-- endbuild -->
+
+  <template is="dom-bind" id="app">
+    <firebase-collection
+      location="https://polycoctel.firebaseio.com/pages"
+      data="{{pages}}"
+      order-by-child="index">
+    </firebase-collection>
+
+    <paper-tabs selected="{{route}}" attr-for-selected="data-route" noink autoselect on-iron-select="goToPage">
+      <template is="dom-repeat" items="[[pages]]">
+        <paper-tab link data-route="[[item.__firebaseKey__]]"><a href="[[baseUrl]][[item.__firebaseKey__]]" class="link">[[item.title]]</a></paper-tab>
+      </template>
+    </paper-tabs>
+
+    <div class="nav">
+      <paper-fab icon="chevron-left" class="left" on-click="goToPreviousPage"></paper-fab>
+      <paper-fab icon="chevron-right" class="right" on-click="goToNextPage"></paper-fab>
+    </div>
+
+    <iron-swipeable-pages selected="{{route}}" attr-for-selected="data-route" force-update id="page">
+      <template is="dom-repeat" items="{{pages}}">
+        <coctel-item coctel="[[item]]" data-route="[[item.__firebaseKey__]]" on-data-ready="removeLoading"></coctel-item>
+      </template>
+    </iron-swipeable-pages>
+
+  </template>
+
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<dom-module id="coctel-item">
+  <template>
+    <style include="iron-flex">
+      :host {
+        display: block;
+      }
+    </style>
+
+    <div class="layout horizontal">
+      <div class="image flex">
+        <img src$="[[coctel.imgSrc]]" alt$="[[coctel.title]]">
+      </div>
+
+      <div class="content flex">
+        <h2>[[coctel.title]]</h2>
+
+        <h3>Ingredientes</h3>
+        <ul>
+          <template is="dom-repeat" items="[[coctel.ingredients]]">
+            <li>[[item]]</li>
+          </template>
+        </ul>
+
+        <h3>Preparación</h3>
+        <div>[[coctel.content]]</div>
+      </div>
+    </div>
+
+  </template>
+  <script>
+  (function() {
+    'use strict';
+
+    Polymer({
+      is: 'coctel-item',
+
+      properties: {
+        coctel: {
+          type: Object,
+          value: function() {
+            return {};
+          }
+        }
+      },
+
+      attached: function() {
+        this.fire('data-ready');
+      }
+    });
+  })();
+  </script>
+</dom-module>
