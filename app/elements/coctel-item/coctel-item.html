@@ -26,6 +26,13 @@
 
         <h3>Preparación</h3>
         <div id="preparation"></div>
+
+        <h3>Fuentes</h3>
+        <ul>
+          <template is="dom-repeat" items="[[coctel.sources]]">
+            <li><a href$="[[item.link]]">[[item.title]]</a></li>
+          </template>
+        </ul>
       </div>
     </div>
 
