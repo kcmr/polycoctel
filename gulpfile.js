@@ -126,7 +126,7 @@ gulp.task('copy', function() {
     'app/*',
     '!app/test',
     '!app/elements',
-    '!app/bower_components',
+    '!app/components',
     '!app/cache-config.json',
     '!**/.DS_Store'
   ], {
@@ -136,8 +136,8 @@ gulp.task('copy', function() {
   // Copy over only the bower_components we need
   // These are things which cannot be vulcanized
   var bower = gulp.src([
-    'app/bower_components/{webcomponentsjs,platinum-sw,sw-toolbox,promise-polyfill}/**/*'
-  ]).pipe(gulp.dest(dist('bower_components')));
+    'app/components/{webcomponentsjs,platinum-sw,sw-toolbox,promise-polyfill}/**/*'
+  ]).pipe(gulp.dest(dist('components')));
 
   return merge(app, bower)
     .pipe($.size({
@@ -157,7 +157,7 @@ gulp.task('fonts', function() {
 // Scan your HTML for assets & optimize them
 gulp.task('html', function() {
   return optimizeHtmlTask(
-    ['app/**/*.html', '!app/{elements,test,bower_components}/**/*.html'],
+    ['app/**/*.html', '!app/{elements,test,components}/**/*.html'],
     dist());
 });
 
@@ -190,7 +190,7 @@ gulp.task('cache-config', function(callback) {
   glob([
     'index.html',
     './',
-    'bower_components/webcomponentsjs/webcomponents-lite.min.js',
+    'components/webcomponentsjs/webcomponents-lite.min.js',
     '{elements,scripts,styles}/**/*.*'],
     {cwd: dir}, function(error, files) {
     if (error) {
@@ -237,7 +237,7 @@ gulp.task('serve', ['styles'], function() {
     }
   });
 
-  gulp.watch(['app/**/*.html', '!app/bower_components/**/*.html'], reload);
+  gulp.watch(['app/**/*.html', '!app/components/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.css'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], reload);
   gulp.watch(['app/images/**/*'], reload);
