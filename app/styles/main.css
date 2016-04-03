@@ -26,12 +26,18 @@ body[loading] { opacity: 0; }
     padding-left: 60px;
   }
 
-.paper-tabs {
-  background: #fff;
+.paper-tabs-wrapper {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,.24);
+  background: #fff;
   position: relative;
   z-index: 2;
+}
+
+.paper-tabs {
   text-transform: uppercase;
+  max-width: 1024px;
+  width: 100%;
+  margin: auto;
 }
 
   .paper-tabs__link {
@@ -41,10 +47,12 @@ body[loading] { opacity: 0; }
 .pager {
   position: absolute;
   top: 50%;
+  left: 50%;
   width: 100%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  max-width: 1220px;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 1;
   box-sizing: border-box;
   padding: 0 20px;

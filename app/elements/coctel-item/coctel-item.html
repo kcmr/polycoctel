@@ -1,9 +1,10 @@
 <link rel="import" href="../../components/polymer/polymer.html">
 <link rel="import" href="../../components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../styles/shared-styles.html">
 
 <dom-module id="coctel-item">
   <template>
-    <style include="iron-flex">
+    <style include="iron-flex shared-styles">
       :host {
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -49,7 +50,7 @@
       a { color: #fff; }
     </style>
 
-    <div class="layout horizontal flex">
+    <div class="layout container horizontal flex">
       <div class="image flex">
         <img src$="[[coctel.imgSrc]]" alt$="[[coctel.title]]">
       </div>
