@@ -74,7 +74,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <paper-tabs selected="{{route}}" attr-for-selected="data-route" noink autoselect on-iron-select="goToPage">
       <template is="dom-repeat" items="[[pages]]">
-        <paper-tab link data-route="[[item.__firebaseKey__]]"><a href="[[baseUrl]][[item.__firebaseKey__]]" class="link">[[item.title]]</a></paper-tab>
+        <paper-tab link data-route="[[item.__firebaseKey__]]"><a href="[[baseUrl]][[item.route]]" class="link">[[item.title]]</a></paper-tab>
       </template>
     </paper-tabs>
 
