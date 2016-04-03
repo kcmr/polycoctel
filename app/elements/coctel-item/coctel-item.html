@@ -25,7 +25,7 @@
         </ul>
 
         <h3>Preparación</h3>
-        <div>[[coctel.preparation]]</div>
+        <div id="preparation"></div>
       </div>
     </div>
 
@@ -46,8 +46,17 @@
         }
       },
 
+      observers: ['_parseStringAsHTML(coctel.preparation)'],
+
       attached: function() {
         this.fire('data-ready');
+      },
+
+      _parseStringAsHTML: function(str) {
+        var t = document.createElement('template');
+        t.innerHTML = str;
+        var clone = document.importNode(t.content, true);
+        Polymer.dom(this.$.preparation).appendChild(clone);
       }
     });
   })();
