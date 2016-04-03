@@ -42,6 +42,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.route = 'pinacolada';
     });
 
+    page('/caipirinha', function() {
+      app.route = 'caipirinha';
+    });
+
+    page('/bloodymary', function() {
+      app.route = 'bloodymary';
+    });
+
     // 404
     page('*', function() {
       page.redirect(app.baseUrl);
