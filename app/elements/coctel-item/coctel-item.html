@@ -5,29 +5,69 @@
   <template>
     <style include="iron-flex">
       :host {
-        display: block;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        background: var(--content-background);
+        color: #fff;
+        height: 100%;
       }
+
+      .image,
+      .content {
+        -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+      }
+
+      .image {
+        margin: auto;
+        text-align: center;
+      }
+
+      .content {
+        background: rgba(215,215,215,.05);
+        padding: 50px 60px;
+        overflow-y: scroll;
+      }
+
+      .main-heading,
+      .secondary-heading { text-transform: uppercase; }
+
+      .main-heading {
+        font-size: 30px;
+        font-weight: 300;
+        margin: 0 0 36px;
+      }
+
+      .secondary-heading {
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0 0 1em;
+      }
+
+      a { color: #fff; }
     </style>
 
-    <div class="layout horizontal">
+    <div class="layout horizontal flex">
       <div class="image flex">
         <img src$="[[coctel.imgSrc]]" alt$="[[coctel.title]]">
       </div>
 
       <div class="content flex">
-        <h2>[[coctel.title]]</h2>
+        <h2 class="main-heading">[[coctel.title]]</h2>
 
-        <h3>Ingredientes</h3>
+        <h3 class="secondary-heading">Ingredientes</h3>
         <ul>
           <template is="dom-repeat" items="[[coctel.ingredients]]">
             <li>[[item]]</li>
           </template>
         </ul>
 
-        <h3>Preparación</h3>
+        <h3 class="secondary-heading">Preparación</h3>
         <div id="preparation"></div>
 
-        <h3>Fuentes</h3>
+        <h3 class="secondary-heading">Fuentes</h3>
         <ul>
           <template is="dom-repeat" items="[[coctel.sources]]">
             <li><a href$="[[item.link]]">[[item.title]]</a></li>
