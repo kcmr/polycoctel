@@ -10,7 +10,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../components/polymer/polymer.html">
 <link rel="import" href="../components/paper-styles/typography.html">
-<link rel="import" href="../components/paper-styles/color.html">
 
 <style is="custom-style">
 
@@ -28,6 +27,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   :root {
     --primary-text-color: #636363;
     --header-background: #54A49D;
+    --accent-color: #CC5696;
 
     /* Components */
   }
@@ -35,12 +35,41 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   /* General styles */
 
   body {
+    @apply(--paper-font-body1);
     @apply(--layout-fullbleed);
     @apply(--layout-vertical);
     color: var(--primary-text-color);
   }
 
+  .paper-tabs {
+    --paper-tabs-selection-bar-color: var(--accent-color);
+  }
+
+    .paper-tabs__link {
+      @apply(--layout-horizontal);
+      @apply(--layout-center-center);
+      color: var(--primary-text-color);
+    }
+
+    .iron-selected .paper-tabs__link {
+      color: var(--accent-color);
+    }
+
   .header {
+    @apply(--layout-horizontal);
     background: var(--header-background);
   }
+
+    .header::before,
+    .header__title {
+      @apply(--layout-flex);
+      -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+    }
+
+    .header__title {
+      @apply(--layout-horizontal);
+      @apply(--layout-center);
+    }
 </style>
