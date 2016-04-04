@@ -46,17 +46,25 @@ body[loading] { opacity: 0; }
 
 .pager {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  bottom: 4%;
   width: 100%;
   max-width: 1220px;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   z-index: 1;
   box-sizing: border-box;
   padding: 0 20px;
+  transition: transform .2s ease-in;
 }
 
   .pager__item--left { float: left; }
   .pager__item--right { float: right; }
+
+/* desktop > 1024px */
+@media (min-width: 64.06em) {
+  .pager {
+    top: 50%;
+    bottom: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
