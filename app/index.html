@@ -48,7 +48,7 @@
     </theme-controller>
 
     <div class="paper-tabs-wrapper">
-      <paper-tabs class="paper-tabs" selected="{{route}}" attr-for-selected="data-route" noink autoselect on-iron-select="goToPage">
+      <paper-tabs class="paper-tabs" selected="{{route}}" attr-for-selected="data-route" noink autoselect on-iron-select="goToPage" aria-controls="page" role="navigation">
         <template is="dom-repeat" items="[[pages]]">
           <paper-tab link data-route="[[item.__firebaseKey__]]"><a href="[[baseUrl]][[item.route]]" class="paper-tabs__link">[[item.title]]</a></paper-tab>
         </template>
@@ -68,16 +68,16 @@
       </h1>
     </div>
 
-    <div class="pager">
-      <paper-fab icon="chevron-left" class="pager__item pager__item--left" on-click="goToPreviousPage"></paper-fab>
-      <paper-fab icon="chevron-right" class="pager__item pager__item--right" on-click="goToNextPage"></paper-fab>
-    </div>
-
     <iron-swipeable-pages selected="{{route}}" attr-for-selected="data-route" force-update id="page" role="main" selected-attribute="slider-active">
       <template is="dom-repeat" items="{{pages}}">
-        <coctel-item coctel="[[item]]" data-route="[[item.__firebaseKey__]]" on-data-ready="removeLoading" aria-hidden="true"></coctel-item>
+        <coctel-item coctel="[[item]]" data-route="[[item.__firebaseKey__]]" on-data-ready="removeLoading" aria-hidden="true" tabindex="-1"></coctel-item>
       </template>
     </iron-swipeable-pages>
+
+    <div class="pager" role="navigation" aria-controls="page">
+      <paper-fab icon="chevron-left" class="pager__item pager__item--left" on-click="goToPreviousPage" aria-label="Anterior"></paper-fab>
+      <paper-fab icon="chevron-right" class="pager__item pager__item--right" on-click="goToNextPage" aria-label="Siguiente"></paper-fab>
+    </div>
 
   </template>
 
