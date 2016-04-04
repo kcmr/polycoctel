@@ -32,7 +32,8 @@
     <firebase-collection
       location="https://polycoctel.firebaseio.com/pages"
       data="{{pages}}"
-      order-by-child="index">
+      order-by-child="index"
+      on-firebase-value="onDataFetched">
     </firebase-collection>
 
     <firebase-document
@@ -70,7 +71,7 @@
 
     <iron-swipeable-pages selected="{{route}}" attr-for-selected="data-route" force-update id="page" role="main" selected-attribute="slider-active">
       <template is="dom-repeat" items="{{pages}}">
-        <coctel-item coctel="[[item]]" data-route="[[item.__firebaseKey__]]" on-data-ready="removeLoading" aria-hidden="true"></coctel-item>
+        <coctel-item coctel="[[item]]" data-route="[[item.__firebaseKey__]]" aria-hidden="true"></coctel-item>
       </template>
     </iron-swipeable-pages>
 

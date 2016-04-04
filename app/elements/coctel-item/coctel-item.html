@@ -103,10 +103,6 @@
 
       observers: ['_parseStringAsHTML(coctel.preparation)'],
 
-      attached: function() {
-        this.fire('data-ready');
-      },
-
       _parseStringAsHTML: function(str) {
         var t = document.createElement('template');
         t.innerHTML = str;
