@@ -47,7 +47,8 @@ body[loading] { opacity: 0; }
 
 .pager {
   position: absolute;
-  bottom: 4%;
+  bottom: 4%; left: 0; right: 0;
+  margin: auto;
   width: 100%;
   max-width: 1220px;
   z-index: 1;
