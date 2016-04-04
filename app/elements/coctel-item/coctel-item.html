@@ -93,6 +93,11 @@
           value: function() {
             return {};
           }
+        },
+        sliderActive: {
+          type: Boolean,
+          value: false,
+          observer: '_activeObserver'
         }
       },
 
@@ -107,6 +112,10 @@
         t.innerHTML = str;
         var clone = document.importNode(t.content, true);
         Polymer.dom(this.$.preparation).appendChild(clone);
+      },
+
+      _activeObserver: function() {
+        this.setAttribute('aria-hidden', !this.sliderActive);
       }
     });
   })();
