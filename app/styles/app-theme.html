@@ -29,6 +29,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     --header-background: #54A49D;
     --content-background: #40334B;
     --accent-color: #CC5696;
+    --logo-text-color: #fff;
+    --logo-accent-color: var(--accent-color);
 
     /* Transitions */
     --background-color-transition: {
@@ -84,6 +86,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       @apply(--layout-horizontal);
       @apply(--layout-center);
     }
+
+  .svg-logo-text {
+    fill: var(--logo-text-color);
+    transition: fill .6s;
+  }
+
+  .svg-logo-accent {
+    fill: var(--logo-accent-color);
+    transition: fill .6s;
+  }
 
   iron-swipeable-pages {
     @apply(--layout-flex);
