@@ -30,6 +30,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     --content-background: #40334B;
     --accent-color: #CC5696;
 
+    /* Transitions */
+    --background-color-transition: {
+      transition: background .6s;
+    };
+
+    --color-transition: {
+      transition: color .6s;
+    };
+
     /* Components */
   }
 
@@ -49,6 +58,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .paper-tabs__link {
       @apply(--layout-horizontal);
       @apply(--layout-center-center);
+      @apply(--color-transition);
       color: var(--primary-text-color);
     }
 
@@ -58,6 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   .header {
     @apply(--layout-horizontal);
+    @apply(--background-color-transition);
     background: var(--header-background);
   }
 
