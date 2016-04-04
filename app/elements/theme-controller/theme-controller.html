@@ -10,31 +10,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../components/polymer/polymer.html">
 
-<dom-module id="theme-controller">
-  <script>
-  (function() {
-    'use strict';
+<script>
+(function() {
+  'use strict';
 
-    Polymer({
-      is: 'theme-controller',
+  Polymer({
+    is: 'theme-controller',
 
-      properties: {
-        colors: {
-          type: Object,
-          value: {}
-        },
-        selected: {
-          type: String,
-          value: ''
-        }
+    properties: {
+      colors: {
+        type: Object,
+        value: {}
       },
-
-      observers: ['_updateTheme(colors, selected)'],
-
-      _updateTheme: function(colors, selected) {
-        colors[selected] && Polymer.updateStyles(colors[selected]);
+      selected: {
+        type: String,
+        value: ''
       }
-    });
-  })();
-  </script>
-</dom-module>
+    },
+
+    observers: ['_updateTheme(colors, selected)'],
+
+    _updateTheme: function(colors, selected) {
+      colors[selected] && Polymer.updateStyles(colors[selected]);
+    }
+  });
+})();
+</script>
