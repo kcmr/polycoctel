@@ -45,6 +45,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       order-by-child="index">
     </firebase-collection>
 
+    <iron-a11y-keys target="[[document]]" keys="left right" on-keys-pressed="arrowHandler"></iron-a11y-keys>
+
     <div class="paper-tabs-wrapper">
       <paper-tabs class="paper-tabs" selected="{{route}}" attr-for-selected="data-route" noink autoselect on-iron-select="goToPage">
         <template is="dom-repeat" items="[[pages]]">

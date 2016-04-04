@@ -40,6 +40,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // See https://github.com/Polymer/polymer/issues/1381
   window.addEventListener('WebComponentsReady', function() {
     // imports are loaded and elements have been registered
+    app.document = document.body;
   });
 
 
@@ -57,6 +58,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   app.removeLoading = function() {
     document.body.removeAttribute('loading');
+  };
+
+  app.arrowHandler = function(e) {
+    if (e.detail.keyboardEvent.keyIdentifier === 'Left') {
+      this.goToPreviousPage();
+    } else {
+      this.goToNextPage();
+    }
   };
 
 })(document);
