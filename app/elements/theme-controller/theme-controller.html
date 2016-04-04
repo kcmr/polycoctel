@@ -32,8 +32,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       observers: ['_updateTheme(colors, selected)'],
 
       _updateTheme: function(colors, selected) {
-        this._theme = colors[selected];
-        this._theme && Polymer.updateStyles(this._theme);
+        colors[selected] && Polymer.updateStyles(colors[selected]);
       }
     });
   })();
