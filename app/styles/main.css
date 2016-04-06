@@ -1,8 +1,7 @@
-body {
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
+html,
+body { overflow-x: hidden; }
 
+body { box-sizing: border-box; }
 body[loading] { opacity: 0; }
 
 *, *::before, *::after {
