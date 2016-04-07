@@ -14,7 +14,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // and give it some initial binding values
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
+  var loader = document.querySelector('#splash');
 
+  var loaderAnimation = new Vivus('loader', {
+    duration: 100,
+    type: 'oneByOne',
+    animTimingFunction: Vivus.EASE
+  }, callback);
+
+  var direction = 1;
+  function callback() {
+    direction = direction > 0 ? -1 : 1;
+    loaderAnimation.play(direction);
+  }
 
   // Sets app default base URL
   app.baseUrl = '/';
@@ -49,7 +61,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   };
 
   app.removeLoading = function() {
-    document.body.removeAttribute('loading');
+    loader.classList.add('fade-out');
+    loader.addEventListener('transitionend', this.hideLoader);
+  };
+
+  app.hideLoader = function(e) {
+    loader.removeEventListener('transitionend', this.hideLoader);
+    loader.hidden = true;
+    loaderAnimation.stop();
   };
 
   app.arrowHandler = function(e) {

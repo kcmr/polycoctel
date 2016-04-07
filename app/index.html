@@ -24,10 +24,20 @@
   <style include="shared-styles"></style>
 </head>
 
-<body unresolved loading>
+<body unresolved>
   <!-- build:remove -->
   <span id="browser-sync-binding"></span>
   <!-- endbuild -->
+
+  <div class="splash" id="splash">
+    <svg width="295" height="266" viewBox="0 0 295 266" id="loader" class="splash__loader">
+      <g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round">
+        <path id="p3" stroke-width="10" d="M107.212 261h96.49" />
+        <path id="p1" stroke-width="9" d="M155.542 261.172V149.17l-92.53-93.473h185.93l-91.49 92.398" stroke-linejoin="round" />
+        <path id="p2" stroke-width="9" d="M88.066 42.51l-30.14-30.544S52.21 6 42.176 6H5M246.487 78.45C269.11 83.44 290 62.436 290 42c0-20.435-16.565-37-37-37s-37 16.565-37 37" />
+      </g>
+    </svg>
+  </div>
 
   <template is="dom-bind" id="app">
     <firebase-collection
@@ -84,6 +94,7 @@
   </template>
 
   <!-- build:js scripts/app.js -->
+  <script src="components/vivus/dist/vivus.js"></script>
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
 </body>
