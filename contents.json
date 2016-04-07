@@ -1,0 +1,139 @@
+{
+  "pages": {
+    "mojito": {
+      "index": "0",
+      "route": "",
+      "title": "Mojito",
+      "ingredients": [
+        "1 parte de ron blanco seco",
+        "1 parte de zumo de lima recién exprimido",
+        "2 partes de soda",
+        "Hierbabuena, varias ramas",
+        "Azúcar",
+        "Hielo picado"
+      ],
+      "preparation": "<p>Mezcla el zumo del limón, el ron, el azúcar, el hielo picado y la hierbabuena usando una cuchara hasta que el azúcar se disuelva. Añade la soda o agua mineral. Sírvelo en vasos pequeños adornados con hierbabuena y una rodaja de lima.</p>",
+      "imgSrc": "../images/mojito.png",
+      "sources": [{
+        "title": "Cócteles y Copas",
+        "link": "http://www.coctelesycopas.com/"
+      }, {
+        "title": "Mojito",
+        "link": "http://www.recetamojito.com/"
+      }]
+    },
+    "margarita": {
+      "index": "1",
+      "route": "margarita",
+      "title": "Margarita",
+      "ingredients": [
+        "50 ml. de tequila blanco",
+        "15 ml. de zumo de limón",
+        "20 ml. de limonada de pomelo",
+        "1 piel de pomelo rosa",
+        "Sal marina",
+        "Cubitos de hielo"
+      ],
+      "preparation": "<p>Llena un vaso largo o jarra de cubitos de hielo hasta el borde. Añade 50 ml de tequila blanco. Añade el zumo de pomelo junto con el jugo de medio limón. Añade la piel de un pomelo rosa. Pon un poo de sal marina por los bordes del vaso, remueve y listo.</p>",
+      "imgSrc": "../images/margarita.png",
+      "sources": [{
+        "title": "Cóctel Margarita",
+        "link": "http://coctelmargarita.com/"
+      }]
+    },
+    "pinacolada": {
+      "index": "2",
+      "route": "pinacolada",
+      "title": "Piña colada",
+      "ingredients": [
+        "400 ml de leche de coco.",
+        "600 ml de zumo de piña o 1.500 gr de piña (cuanto más madura mejor)",
+        "600 ml de ron blanco (o extracto de ron 300 ml)",
+        "Hielo picado",
+        "1 lata (12 fl. oz.) de leche evaporada (opcional)"
+      ],
+      "preparation": "<p>Bate la piña o el zumo con un poco de leche de coco hasta que quede bien mezclado. Añade el ron, la leche evaporada, azúcar al gusto y bate todo bien.</p><p>Pon la mezcla en una copa y refrigérala.</p><p>Se puede adornar la copa con una rodaja de piña, una cereza al maraschino, o una pequeña sombrilla.</p>",
+      "imgSrc": "../images/pinacolada.png",
+      "sources": [{
+        "title": "Cócteles y Copas",
+        "link": "http://www.coctelesycopas.com/pina-colada.htm"
+      }]
+    },
+    "caipirinha": {
+      "index": "3",
+      "route": "caipirinha",
+      "title": "Caipirinha",
+      "ingredients": [
+        "1 botella de vodka",
+        "3 cucharadas de azúcar",
+        "7 limones",
+        "Cubitos de hielo",
+        "Lima para decorar (opcional)"
+      ],
+      "preparation": "<p>Echa el vodka en un vaso ancho. Añade el jugo de 7 limones y 3 cucharadas de azúcar. Mezcla todo con una varilla para cócteles o una cuchara larga. Por último añade el hielo. Se puede decorar el vaso con una rodaja de lima.</p>",
+      "imgSrc": "../images/caipirinha.png",
+      "sources": [{
+        "title": "Receta Caipirinha",
+        "link": "http://recetacaipirinha.net/"
+      }]
+    },
+    "bloodymary": {
+      "index": "4",
+      "route": "bloodymary",
+      "title": "Bloody Mary",
+      "ingredients": [
+        "40 ml de vodka",
+        "75 gramos de zumo de tomate",
+        "15 ml de zumo de limón",
+        "Dos chorritos de salsa Worcestershire",
+        "Dos gotitas de Tabasco",
+        "Sal",
+        "Pimienta negra recién molida",
+        "Hielo"
+      ],
+      "preparation": "<p>Pon en un vaso grande una buena cantidad de cubitos de hielo. Echa el vodka, el zumo de limón, la sal, la pimienta, la salsa Worcestershire y el Tabasco.</p><p>Mezcla todo usando una varilla para cócteles o una cuchara larga. Por último añade la salsa de tomate.</p><p>Se puede adornar la copa con un trozo de apio y/o una rodajita de limón.</p>",
+      "imgSrc": "../images/bloodymary.png",
+      "sources": [{
+        "title": "Receta Bloody Mary",
+        "link": "http://www.recetabloodymary.com/"
+      }]
+    }
+  },
+  "colors": {
+    "mojito": {
+      "--content-background": "#40334B",
+      "--header-background": "#54A49D",
+      "--accent-color": "#CC5696",
+      "--logo-text-color": "#fff",
+      "--logo-accent-color": "#CC5696"
+    },
+    "margarita": {
+      "--content-background": "#232D45",
+      "--header-background": "#A2C653",
+      "--accent-color": "#CC5696",
+      "--logo-text-color": "#fff",
+      "--logo-accent-color": "#CC5696"
+    },
+    "pinacolada": {
+      "--content-background": "#382C0A",
+      "--header-background": "#E2DEBD",
+      "--accent-color": "#C60000",
+      "--logo-text-color": "#382C0A",
+      "--logo-accent-color": "#C60000"
+    },
+    "bloodymary": {
+      "--content-background": "#3D332A",
+      "--header-background": "#D85024",
+      "--accent-color": "#CF421A",
+      "--logo-text-color": "#fff",
+      "--logo-accent-color": "#CDDE43"
+    },
+    "caipirinha": {
+      "--content-background": "#2F2538",
+      "--header-background": "#58C139",
+      "--accent-color": "#CC5696",
+      "--logo-text-color": "#fff",
+      "--logo-accent-color": "#CC5696"
+    }
+  }
+}

@@ -4,5 +4,4 @@ bower_components
 components
 .tmp
 .publish/
-contents.json
 docs
